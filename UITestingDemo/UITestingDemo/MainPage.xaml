@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="UITestingDemo.MainPage">
+    <ScrollView Orientation="Vertical">
+        <StackLayout Margin="20, 60, 20, 20"
+                     VerticalOptions="FillAndExpand"
+                     Orientation="Vertical">
+
+            <Label Text="Register"
+               HorizontalTextAlignment="Center"
+               FontSize="Large"
+               Margin="0,0,0,20"
+               FontAttributes="Bold"/>
+
+            <Label Text="Username" FontSize="Small" TextColor="Red"></Label>
+            <Entry Margin="0,0,0,20" Placeholder="Enter username..." Text="{Binding Name}"></Entry>
+
+            <Label Text="Email" FontSize="Small" TextColor="Red"></Label>
+            <Entry Margin="0,0,0,20" Placeholder="Enter email..." Text="{Binding Surname}"></Entry>
+
+            <Label Text="Password" FontSize="Small" TextColor="Red"></Label>
+            <Entry Margin="0,0,0,20" Placeholder="Enter password..." Text="{Binding Surname}"></Entry>
+
+            <Label Text="Confirm password" FontSize="Small" TextColor="Red"></Label>
+            <Entry Margin="0,0,0,20" Placeholder="Confirm password..." IsPassword="True" Text="{Binding Number}" ></Entry>
+
+            <Button Text="REGISTER"
+            FontSize="Default"
+            Padding="20"
+            Margin="0, 0, 0, 20"
+            HeightRequest="50"
+            CornerRadius="10"
+            TextColor="White"
+            BackgroundColor="Red"
+            Command="{Binding HandleContinueCommand}"/>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
