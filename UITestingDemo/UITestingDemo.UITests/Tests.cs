@@ -7,7 +7,7 @@ using Xamarin.UITest.Queries;
 
 namespace UITestingDemo.UITests
 {
-    [TestFixture(Platform.Android)]
+    //[TestFixture(Platform.Android)]
     [TestFixture(Platform.iOS)]
     public class Tests
     {
@@ -32,6 +32,25 @@ namespace UITestingDemo.UITests
             app.Screenshot("Welcome screen.");
 
             Assert.IsTrue(results.Any());
+        }
+
+        [Test]
+        public void UserIsRegisterdSuccesfully()
+        {
+            //all fields are mandatory
+
+            //Arrange
+            app.EnterText("EntryUsername", "PopovskaS");
+            app.EnterText("EntryEmail", "spo@spo.com");
+            app.EnterText("EntryPassword", "TestPassword");
+            app.EnterText("EntryConfrimPassword", "TestPassword");
+
+            //Act
+
+            //Assert
+            Assert.IsTrue(true);
+            // Assert. 
+
         }
     }
 }
