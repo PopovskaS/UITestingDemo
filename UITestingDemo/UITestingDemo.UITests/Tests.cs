@@ -26,31 +26,20 @@ namespace UITestingDemo.UITests
         }
 
         [Test]
-        public void WelcomeTextIsDisplayed()
-        {
-            AppResult[] results = app.WaitForElement(c => c.Marked("Welcome to Xamarin.Forms!"));
-            app.Screenshot("Welcome screen.");
-
-            Assert.IsTrue(results.Any());
-        }
-
-        [Test]
         public void UserIsRegisterdSuccesfully()
         {
-            //all fields are mandatory
-
             //Arrange
-            app.EnterText("EntryUsername", "PopovskaS");
-            app.EnterText("EntryEmail", "spo@spo.com");
-            app.EnterText("EntryPassword", "TestPassword");
-            app.EnterText("EntryConfrimPassword", "TestPassword");
+            app.EnterText("EntryUsernameID", "PopovskaS");
+            app.EnterText("EntryEmailID", "spo@spo.com");
+            app.EnterText("EntryPasswordID", "TestPassword111!");
+            app.EnterText("EntryConfrimPasswordID", "TestPassword111!");
 
             //Act
+            app.Tap("RegisterBtnID");
 
             //Assert
-            Assert.IsTrue(true);
-            // Assert. 
-
+            Assert.DoesNotThrow(() => app.WaitForElement("WelcomeLabelID"),
+                "Unable to find WelcomeLabelID", TimeSpan.FromSeconds(5));
         }
     }
 }

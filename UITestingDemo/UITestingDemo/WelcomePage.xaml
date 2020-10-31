@@ -3,6 +3,7 @@
     <ContentPage.Content>
 
         <Label
+            AutomationId="WelcomeLabelID"
             HorizontalTextAlignment="Center"
             VerticalTextAlignment="Center"
             VerticalOptions="Center"

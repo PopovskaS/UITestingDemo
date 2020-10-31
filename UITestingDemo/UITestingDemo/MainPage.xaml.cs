@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net.Mail;
 using Xamarin.Forms;
 
 namespace UITestingDemo
 {
     public partial class MainPage : ContentPage
     {
+        private bool AreFieldsNotNullOrEmpty => string.IsNullOrEmpty(EmailEntry.Text)
+            && string.IsNullOrEmpty(UserNameEntry.Text)
+            && string.IsNullOrEmpty(PasswordEntry.Text)
+            && string.IsNullOrEmpty(ConfirmPasswordEntry.Text);
+
+        private bool DoPasswordsMatch => PasswordEntry.Text == ConfirmPasswordEntry.Text;
+
         public MainPage()
         {
             InitializeComponent();
@@ -19,7 +22,25 @@ namespace UITestingDemo
 
         async void Button_Clicked(System.Object sender, System.EventArgs e)
         {
-            await Navigation.PushAsync(new WelcomePage());
+            if(!AreFieldsNotNullOrEmpty && IsValidEmail(EmailEntry.Text) && DoPasswordsMatch)
+            {
+                await Navigation.PushAsync(new WelcomePage());
+            }
         }
+
+        public bool IsValidEmail(string emailaddress)
+        {
+            try
+            {
+                MailAddress mailAddress = new MailAddress(emailaddress);
+
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
+
     }
 }

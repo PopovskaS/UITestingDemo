@@ -11,27 +11,50 @@
                Margin="0,0,0,20"
                FontAttributes="Bold"/>
 
-            <Label Text="Username" FontSize="Small" TextColor="Red"></Label>
-            <Entry Margin="0,0,0,20" AutomationId="EntryUsername" Placeholder="Enter username..."></Entry>
+            <Label Text="Username"
+                   FontSize="Small"
+                   TextColor="Red"/>
+            <Entry Margin="0,0,0,20"
+                   x:Name="UserNameEntry"
+                   AutomationId="EntryUsernameID"
+                   Placeholder="Enter username..."/>
 
-            <Label Text="Email" FontSize="Small" TextColor="Red"></Label>
-            <Entry Margin="0,0,0,20" Placeholder="Enter email..." AutomationId="EntryEmail"></Entry>
+            <Label Text="Email"
+                   FontSize="Small"
+                   TextColor="Red"/>
+            <Entry Margin="0,0,0,20"
+                   x:Name="EmailEntry"
+                   Placeholder="Enter email..."
+                   AutomationId="EntryEmailID"/>
 
-            <Label Text="Password" FontSize="Small" TextColor="Red"></Label>
-            <Entry Margin="0,0,0,20" Placeholder="Enter password..." AutomationId="EntryPassword"></Entry>
+            <Label Text="Password"
+                   FontSize="Small"
+                   TextColor="Red"/>
+            <Entry Margin="0,0,0,20"
+                   x:Name="PasswordEntry"
+                   Placeholder="Enter password..."
+                   AutomationId="EntryPasswordID"
+                   IsPassword="True"/>
 
-            <Label Text="Confirm password" FontSize="Small" TextColor="Red"></Label>
-            <Entry Margin="0,0,0,20" Placeholder="Confirm password..." AutomationId="EntryConfrimPassword"  IsPassword="True" ></Entry>
+            <Label Text="Confirm password"
+                   FontSize="Small"
+                   TextColor="Red"/>
+            <Entry Margin="0,0,0,20"
+                   Placeholder="Confirm password..."
+                   x:Name="ConfirmPasswordEntry"
+                   AutomationId="EntryConfrimPasswordID"
+                   IsPassword="True"/>
 
             <Button Text="REGISTER"
-            FontSize="Default"
-            Padding="20"
-            Margin="0, 0, 0, 20"
-            HeightRequest="50"
-            CornerRadius="10"
-            TextColor="White"
-            BackgroundColor="Red"
-            Clicked="Button_Clicked"/>
+                    FontSize="Default"
+                    AutomationId="RegisterBtnID"
+                    Padding="20"
+                    Margin="0, 0, 0, 20"
+                    HeightRequest="50"
+                    CornerRadius="10"
+                    TextColor="White"
+                    BackgroundColor="Red"
+                    Clicked="Button_Clicked"/>
 
         </StackLayout>
     </ScrollView>
