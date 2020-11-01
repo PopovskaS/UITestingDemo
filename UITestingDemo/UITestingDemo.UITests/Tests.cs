@@ -28,6 +28,7 @@ namespace UITestingDemo.UITests
         [Test]
         public void UserIsRegisterdSuccesfully()
         {
+            app.Screenshot("Register screen");
             //Arrange
             app.EnterText("EntryUsernameID", "PopovskaS");
             app.EnterText("EntryEmailID", "spo@spo.com");
@@ -40,6 +41,7 @@ namespace UITestingDemo.UITests
             //Assert
             Assert.DoesNotThrow(() => app.WaitForElement("WelcomeLabelID"),
                 "Unable to find WelcomeLabelID", TimeSpan.FromSeconds(5));
+            app.Screenshot("Welcome screen");
         }
     }
 }
