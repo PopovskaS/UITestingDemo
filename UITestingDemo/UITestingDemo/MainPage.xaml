@@ -16,6 +16,7 @@
                    TextColor="Red"/>
             <Entry Margin="0,0,0,20"
                    x:Name="UserNameEntry"
+                   Text="{Binding Username}"
                    AutomationId="EntryUsernameID"
                    Placeholder="Enter username..."/>
 
@@ -24,6 +25,7 @@
                    TextColor="Red"/>
             <Entry Margin="0,0,0,20"
                    x:Name="EmailEntry"
+                   Text="{Binding Email}"
                    Placeholder="Enter email..."
                    AutomationId="EntryEmailID"/>
 
@@ -32,6 +34,7 @@
                    TextColor="Red"/>
             <Entry Margin="0,0,0,20"
                    x:Name="PasswordEntry"
+                   Text="{Binding Password}"
                    Placeholder="Enter password..."
                    AutomationId="EntryPasswordID"
                    IsPassword="True"/>
@@ -42,6 +45,7 @@
             <Entry Margin="0,0,0,20"
                    Placeholder="Confirm password..."
                    x:Name="ConfirmPasswordEntry"
+                   Text="{Binding ConfirmPassword}"
                    AutomationId="EntryConfrimPasswordID"
                    IsPassword="True"/>
 
@@ -54,7 +58,7 @@
                     CornerRadius="10"
                     TextColor="White"
                     BackgroundColor="Red"
-                    Clicked="Button_Clicked"/>
+                    Command="{Binding HandleRegistrationCommand}"/>
 
         </StackLayout>
     </ScrollView>
