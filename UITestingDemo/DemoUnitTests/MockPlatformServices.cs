@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
-namespace Pattern.Tests
+namespace DemoUnitTests
 {
 
 	public class XamarinFormsMock
