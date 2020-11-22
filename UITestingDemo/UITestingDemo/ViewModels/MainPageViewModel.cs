@@ -18,12 +18,12 @@ namespace UITestingDemo.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private bool AreFieldsNotNullOrEmpty => string.IsNullOrEmpty(Email)
+        public bool AreFieldsNotNullOrEmpty => string.IsNullOrEmpty(Email)
             && string.IsNullOrEmpty(Username)
             && string.IsNullOrEmpty(Password)
             && string.IsNullOrEmpty(ConfirmPassword);
 
-        private bool DoPasswordsMatch => Password == ConfirmPassword;
+        public bool DoPasswordsMatch => Password == ConfirmPassword;
 
         public MainPageViewModel(INavigation navigation)
         {
@@ -78,16 +78,21 @@ namespace UITestingDemo.ViewModels
         {
             return new Command(() =>
             {
-                if (!AreFieldsNotNullOrEmpty && IsValidEmail(Email) && DoPasswordsMatch)
-                {
-                    Action _navigateToMainPage =
-                         async () =>
-                         {
-                             await _naviagtion.PushAsync(new WelcomePage());
-                         };
-                    _navigateToMainPage.Invoke();
-                }
+                HandleRegistrationValidation();
             });
+        }
+
+        public void HandleRegistrationValidation()
+        {
+            if (!AreFieldsNotNullOrEmpty && IsValidEmail(Email) && DoPasswordsMatch)
+            {
+                Action _navigateToMainPage =
+                     async () =>
+                     {
+                         await _naviagtion.PushAsync(new WelcomePage());
+                     };
+                _navigateToMainPage.Invoke();
+            }
         }
 
         public bool IsValidEmail(string emailaddress)
