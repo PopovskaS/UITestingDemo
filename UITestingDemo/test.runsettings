@@ -6,7 +6,7 @@
         <Configuration>
           <Format>json,cobertura,lcov,teamcity,opencover</Format>          
           <Exclude>[Xamarin.Forms.Core]*</Exclude> 
-          <ExcludeByFile>**/Xamarin.Forms.Core/*.cs, **/UITestingDemo/*.cs, **/UITestingDemo/*.xaml.g.cs</ExcludeByFile>
+          <ExcludeByFile>**/Xamarin.Forms.Core/*.cs, **/UITestingDemo/* </ExcludeByFile>
           <IncludeDirectory>**/UITestingDemo/ViewModels/*.cs</IncludeDirectory>
         </Configuration>
       </DataCollector>
