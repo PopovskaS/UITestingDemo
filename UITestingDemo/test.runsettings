@@ -5,8 +5,9 @@
       <DataCollector friendlyName="XPlat code coverage">
         <Configuration>
           <Format>json,cobertura,lcov,teamcity,opencover</Format>          
-          <Exclude>[Xamarin.Forms.Core]*, [UITestingDemo.App]*</Exclude> 
-          <ExcludeByFile>**/Xamarin.Forms.Core/*.cs, **/UITestingDemo.App/*.cs</ExcludeByFile>
+          <Exclude>[Xamarin.Forms.Core]*</Exclude> 
+          <ExcludeByFile>**/Xamarin.Forms.Core/*.cs, **/UITestingDemo/*.cs</ExcludeByFile>
+          <IncludeDirectory>**/UITestingDemo/ViewModels/*.cs</IncludeDirectory>
         </Configuration>
       </DataCollector>
     </DataCollectors>
