@@ -9,7 +9,10 @@ using Xamarin.Forms.Internals;
 
 namespace DemoUnitTests
 {
-
+	/// <summary>
+	/// MockPlatformServices original soruce
+	/// https://github.com/adamped/Pattern/blob/master/Pattern.Tests/MockPlatformServices.cs
+	/// </summary>
 	public class XamarinFormsMock
 	{
 		public static void Init()
